@@ -65,7 +65,7 @@ export default function FooterEnhanced() {
     { icon: Github, href: 'https://github.com', label: 'GitHub', color: 'hover:text-gray-400' },
     { icon: Twitter, href: 'https://twitter.com', label: 'Twitter', color: 'hover:text-amber-400' },
     { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn', color: 'hover:text-blue-600' },
-    { icon: Mail, href: 'mailto:contact@arvixai.com', label: 'Email', color: 'hover:text-red-400' },
+    { icon: Mail, href: 'mailto:sky19920128@gmail.com', label: 'Email', color: 'hover:text-red-400' },
   ];
 
   return (
@@ -219,8 +219,8 @@ export default function FooterEnhanced() {
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3 text-gray-400">
                     <Mail className="w-4 h-4 mt-1 flex-shrink-0 text-amber-400" />
-                    <a href="mailto:contact@arvixai.com" className="hover:text-white transition-colors">
-                      contact@arvixai.com
+                    <a href="mailto:sky19920128@gmail.com" className="hover:text-white transition-colors">
+                      sky19920128@gmail.com
                     </a>
                   </li>
                   <li className="flex items-start gap-3 text-gray-400">

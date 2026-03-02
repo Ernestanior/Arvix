@@ -3,7 +3,7 @@
     "siteName": "ARVIX 科技",
     "siteTitle": "ARVIX 科技 - 专业的软件开发服务",
     "siteDescription": "提供网站开发、APP开发、小程序开发等专业软件开发服务",
-    "keywords": "软件开发, 网站开发, APP开发, 小程序开发, 微信小程序, 移动应用, 网页设计, 前端开发, 后端开发, 全栈开发, 技术咨询, 深圳软件公司"
+    "keywords": "软件开发, 网站开发, APP开发, 小程序开发, 微信小程序, 移动应用, 网页设计, 前端开发, 后端开发, 全栈开发, 技术咨询, 新加坡软件公司"
   },
   "nav": {
     "home": "首页",
@@ -51,9 +51,9 @@
     "termsOfUse": "使用条款",
     "serviceAgreement": "服务协议",
     "cookiePolicy": "Cookie 政策",
-    "location": "中国 · 深圳 南山区科技园",
+    "location": "新加坡",
     "madeWith": "Made with",
-    "madeIn": "in China"
+    "madeIn": "in Singapore"
   },
   "common": {
     "learnMore": "了解更多",

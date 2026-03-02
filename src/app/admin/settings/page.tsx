@@ -224,7 +224,7 @@ export default function SettingsPage() {
                 value={settings.contact_email || ''}
                 onChange={(e) => handleChange('contact_email', e.target.value)}
                 className="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-blue-500"
-                placeholder="contact@arvixai.com"
+                placeholder="sky19920128@gmail.com"
               />
             </div>
 

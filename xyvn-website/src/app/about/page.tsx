@@ -37,7 +37,7 @@ export default function AboutPage() {
   ];
 
   const milestones = [
-    { year: '2020', title: '公司成立', desc: '在深圳创立，专注数字产品开发' },
+    { year: '2020', title: '公司成立', desc: '在新加坡创立，专注数字产品开发' },
     { year: '2021', title: '团队扩张', desc: '团队规模扩大到 20+ 人' },
     { year: '2022', title: '业务突破', desc: '服务客户超过 100 家企业' },
     { year: '2023', title: '技术升级', desc: '全面采用最新技术栈' },

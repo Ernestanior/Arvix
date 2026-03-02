@@ -87,12 +87,7 @@ export default function PricingSection() {
                     {t(`plans.${plan.planKey}.description`)}
                   </p>
 
-                  {/* 价格 */}
-                  <div className="mb-8">
-                    <span className={`text-4xl font-bold bg-gradient-to-r ${plan.color} bg-clip-text text-transparent`}>
-                      {t(`plans.${plan.planKey}.price`)}
-                    </span>
-                  </div>
+                  
 
                   {/* 功能列表 */}
                   <ul className="space-y-4 mb-8 flex-grow">

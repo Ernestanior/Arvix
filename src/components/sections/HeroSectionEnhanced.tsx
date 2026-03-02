@@ -85,30 +85,6 @@ export default function HeroSectionEnhanced() {
             </Link>
           </motion.div>
 
-          {/* 信任指标 - 极简横向布局 */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-wrap justify-center items-center gap-16 text-center"
-          >
-            {['projects', 'satisfaction', 'response'].map((key, index) => (
-              <motion.div
-                key={key}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.7 + index * 0.1 }}
-                className="group cursor-default"
-              >
-                <div className="text-5xl md:text-6xl font-bold text-white mb-2 group-hover:text-amber-400 transition-colors">
-                  {t(`stats.${key}.value`)}
-                </div>
-                <div className="text-sm text-gray-500 uppercase tracking-wider">
-                  {t(`stats.${key}.label`)}
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
 
         </div>
       </div>

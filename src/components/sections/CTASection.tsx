@@ -24,7 +24,6 @@ export default function CTASection() {
   const stats = [
     { key: 'projects', icon: '🚀' },
     { key: 'clients', icon: '🤝' },
-    { key: 'satisfaction', icon: '⭐' },
   ];
 
   return (
@@ -69,7 +68,7 @@ export default function CTASection() {
         </ScrollReveal>
 
         <ScrollReveal delay={0.3}>
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
             {stats.map((stat, index) => (
               <div 
                 key={index}

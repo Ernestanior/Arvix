@@ -8,9 +8,9 @@ export default function StructuredData() {
     description: '专注网站开发、APP开发和小程序开发的科技公司',
     address: {
       '@type': 'PostalAddress',
-      addressLocality: '深圳',
-      addressRegion: '广东省',
-      addressCountry: 'CN',
+      addressLocality: '新加坡',
+      addressRegion: ' ',
+      addressCountry: 'Singapore',
     },
     contactPoint: {
       '@type': 'ContactPoint',

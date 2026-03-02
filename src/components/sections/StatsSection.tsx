@@ -24,13 +24,7 @@ export default function StatsSection() {
       statKey: 'clients',
       color: 'from-orange-500 to-red-500',
     },
-    {
-      icon: Award,
-      value: 98,
-      suffix: '%',
-      statKey: 'satisfaction',
-      color: 'from-green-500 to-emerald-500',
-    },
+    
     {
       icon: Zap,
       value: 24,
@@ -58,7 +52,7 @@ export default function StatsSection() {
           </div>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {stats.map((stat, index) => (
             <ScrollReveal key={index} delay={index * 0.1}>
               <motion.div
