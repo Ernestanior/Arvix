@@ -183,13 +183,6 @@ export default function TermsOfServicePage() {
           </SectionCard>
         </ScrollReveal>
 
-        {/* 联系我们 */}
-        <ScrollReveal delay={0.7}>
-          <SectionCard title={t('sections.contact.title')} className="mt-6">
-            <p className="text-gray-300 text-sm mb-4">{t('sections.contact.content')}</p>
-          </SectionCard>
-        </ScrollReveal>
-
         {/* 最后更新时间 */}
         <div className="text-center mt-12 text-gray-500 text-sm">
           <p>{t('lastUpdated')}: {t('date')}</p>

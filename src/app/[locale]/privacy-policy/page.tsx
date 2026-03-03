@@ -161,24 +161,10 @@ export default function PrivacyPolicyPage() {
           </SectionCard>
         </ScrollReveal>
 
-        {/* 儿童隐私 */}
-        <ScrollReveal delay={0.55}>
-          <SectionCard title={t('sections.children.title')} className="mt-6">
-            <p className="text-gray-300 text-sm">{t('sections.children.content')}</p>
-          </SectionCard>
-        </ScrollReveal>
-
-        {/* 政策变更 */}
-        <ScrollReveal delay={0.6}>
+        {/* 条款变更 */}
+        <ScrollReveal delay={0.65}>
           <SectionCard title={t('sections.changes.title')} className="mt-6">
             <p className="text-gray-300 text-sm">{t('sections.changes.content')}</p>
-          </SectionCard>
-        </ScrollReveal>
-
-        {/* 联系我们 */}
-        <ScrollReveal delay={0.65}>
-          <SectionCard title={t('sections.contact.title')} className="mt-6">
-            <p className="text-gray-300 text-sm mb-4">{t('sections.contact.content')}</p>
           </SectionCard>
         </ScrollReveal>
 
