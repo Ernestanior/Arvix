@@ -51,9 +51,11 @@
     "termsOfUse": "Terms of Use",
     "serviceAgreement": "Service Agreement",
     "cookiePolicy": "Cookie Policy",
-    "location": "China · Shenzhen Nanshan Technology Park",
+    "companyInfo": "Company Information",
+    "refundPolicy": "Refund Policy",
+    "location": "Singapore",
     "madeWith": "Made with",
-    "madeIn": "in China"
+    "madeIn": "in Singapore"
   },
   "common": {
     "learnMore": "Learn More",
