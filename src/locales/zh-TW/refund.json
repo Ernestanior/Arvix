@@ -1,0 +1,117 @@
+{
+  "title": "運輸與退款政策",
+  "subtitle": "Shipping & Refund Policy",
+  "companyInfo": {
+    "title": "公司資訊",
+    "legalEntity": "法人實體",
+    "companyName": "ARVIX PTE. LTD.",
+    "registeredAddress": "註冊地址",
+    "address": "1 Jln Membina, Singapore 169479",
+    "phone": "聯繫電話",
+    "email": "電子郵箱"
+  },
+  "shipping": {
+    "title": "運輸政策",
+    "subtitle": "Shipping Policy",
+    "digitalOnly": {
+      "title": "數字服務說明",
+      "description": "ARVIX PTE. LTD. 提供的所有服務均為數字服務，包括 SaaS 訂閱服務、網站開發、移動應用開發、技術咨詢等。我們不涉及任何實體商品的運輸或交付。"
+    },
+    "delivery": {
+      "title": "服務交付方式",
+      "saas": {
+        "title": "SaaS 訂閱服務",
+        "description": "付款成功後立即激活，通過在綫平臺直接訪問使用。"
+      },
+      "development": {
+        "title": "網站/應用開發",
+        "description": "通過代碼倉庫（GitHub/GitLab）或安全的文件傳輸方式交付源代碼。"
+      },
+      "consulting": {
+        "title": "技術咨詢服務",
+        "description": "通過視頻會議、電話或電子郵件提供咨詢服務。"
+      }
+    },
+    "timeline": {
+      "title": "交付時間",
+      "description": "具體交付時間取決於服務類型和項目範圍，將在服務合同中明確約定。"
+    }
+  },
+  "refund": {
+    "title": "退款政策",
+    "subtitle": "Refund Policy",
+    "saas": {
+      "title": "SaaS 訂閱服務退款",
+      "sevenDay": {
+        "title": "7天無理由退款",
+        "description": "首次訂閱後7天内，如不滿意可申請全額退款。"
+      },
+      "monthly": {
+        "title": "月度訂閱",
+        "description": "可随時取消，次月不再扣費。已支付當月費用不退還。"
+      },
+      "annual": {
+        "title": "年度訂閱",
+        "description": "購買後30天内申請退款，可退還剩餘11個月的費用（按比例計算）。"
+      },
+      "special": {
+        "title": "特殊情況",
+        "description": "如服務出現嚴重故障或不可用時間超過約定 SLA，可申請額外補償。"
+      }
+    },
+    "development": {
+      "title": "定製開發服務退款",
+      "beforeStart": {
+        "title": "項目啓動前",
+        "description": "簽署合同後7天内，項目尚未正式啓動，可申請全額退還定金。"
+      },
+      "inProgress": {
+        "title": "項目進行中途",
+        "description": "根據已完成工作量按比例退款，需扣除已發生的人員工時和第三方費用。"
+      },
+      "completed": {
+        "title": "項目完成後",
+        "description": "開發工作已完成並交付源代碼後，原則上不予退款。"
+      }
+    },
+    "consulting": {
+      "title": "技術咨詢服務退款",
+      "unused": {
+        "title": "未使用咨詢",
+        "description": "預付的咨詢費用如未使用，可在購買後30天内申請全額退款。"
+      },
+      "partial": {
+        "title": "已使用部分",
+        "description": "已使用的咨詢時長按標準費率扣除，剩餘部分可退還。"
+      },
+      "used": {
+        "title": "已完成咨詢",
+        "description": "已完成的咨詢 session 不予退款，但可在7天内要求補充解答。"
+      }
+    },
+    "process": {
+      "title": "退款流程",
+      "step1": {
+        "title": "提交申請",
+        "description": "發送郵件至 ern@xyvnai.com，說明退款原因和訂單信息。"
+      },
+      "step2": {
+        "title": "審核處理",
+        "description": "我們將在3-5個工作日內審核您的申請。"
+      },
+      "step3": {
+        "title": "退款到賬",
+        "description": "審核通過後，退款將在7-14個工作日內退回原支付賬戶。"
+      }
+    }
+  },
+  "contact": {
+    "title": "有任何疑問？",
+    "description": "如果您對運輸或退款政策有任何疑問，請随時聯繫我們。"
+  },
+  "footer": {
+    "lastUpdated": "最後更新時間",
+    "date": "2026年3月3日",
+    "disclaimer": "ARVIX PTE. LTD. 保留最終解釋權"
+  }
+}

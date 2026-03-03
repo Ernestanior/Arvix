@@ -1,0 +1,117 @@
+{
+  "title": "Shipping & Refund Policy",
+  "subtitle": "Shipping & Refund Policy",
+  "companyInfo": {
+    "title": "Company Information",
+    "legalEntity": "Legal Entity",
+    "companyName": "ARVIX PTE. LTD.",
+    "registeredAddress": "Registered Address",
+    "address": "1 Jln Membina, Singapore 169479",
+    "phone": "Phone",
+    "email": "Email"
+  },
+  "shipping": {
+    "title": "Shipping Policy",
+    "subtitle": "Shipping Policy",
+    "digitalOnly": {
+      "title": "Digital Services Only",
+      "description": "All services provided by ARVIX PTE. LTD. are digital services, including SaaS subscriptions, web development, mobile app development, and technical consulting. We do not ship or deliver any physical goods."
+    },
+    "delivery": {
+      "title": "Service Delivery Methods",
+      "saas": {
+        "title": "SaaS Subscription Services",
+        "description": "Activated immediately after successful payment, accessible via online platform."
+      },
+      "development": {
+        "title": "Web/App Development",
+        "description": "Delivered via code repositories (GitHub/GitLab) or secure file transfer."
+      },
+      "consulting": {
+        "title": "Technical Consulting Services",
+        "description": "Provided via video conferencing, phone calls, or email."
+      }
+    },
+    "timeline": {
+      "title": "Delivery Timeline",
+      "description": "Delivery timeline depends on service type and project scope, specified in the service agreement."
+    }
+  },
+  "refund": {
+    "title": "Refund Policy",
+    "subtitle": "Refund Policy",
+    "saas": {
+      "title": "SaaS Subscription Refunds",
+      "sevenDay": {
+        "title": "7-Day Money-Back Guarantee",
+        "description": "7-day money-back guarantee for first-time subscriptions."
+      },
+      "monthly": {
+        "title": "Monthly Subscriptions",
+        "description": "Monthly subscriptions can be cancelled anytime. No refund for current month."
+      },
+      "annual": {
+        "title": "Annual Subscriptions",
+        "description": "Annual subscriptions: refund remaining months within 30 days (pro-rated)."
+      },
+      "special": {
+        "title": "Special Circumstances",
+        "description": "Additional compensation available for severe service outages exceeding SLA."
+      }
+    },
+    "development": {
+      "title": "Custom Development Refunds",
+      "beforeStart": {
+        "title": "Before Project Start",
+        "description": "Full deposit refund if project hasn't started within 7 days of signing."
+      },
+      "inProgress": {
+        "title": "Project In Progress",
+        "description": "Pro-rated refund based on completed work, minus incurred costs."
+      },
+      "completed": {
+        "title": "Project Completed",
+        "description": "No refund after project completion and source code delivery."
+      }
+    },
+    "consulting": {
+      "title": "Consulting Refunds",
+      "unused": {
+        "title": "Unused Credits",
+        "description": "Full refund for unused consulting credits within 30 days."
+      },
+      "partial": {
+        "title": "Partially Used",
+        "description": "Used hours deducted at standard rate, remainder refunded."
+      },
+      "used": {
+        "title": "Completed Sessions",
+        "description": "No refund for completed sessions, but follow-up available within 7 days."
+      }
+    },
+    "process": {
+      "title": "Refund Process",
+      "step1": {
+        "title": "Submit Request",
+        "description": "Email ern@xyvnai.com with order details and reason."
+      },
+      "step2": {
+        "title": "Review Process",
+        "description": "We will review your request within 3-5 business days."
+      },
+      "step3": {
+        "title": "Refund Issued",
+        "description": "Refund processed to original payment method within 7-14 business days."
+      }
+    }
+  },
+  "contact": {
+    "title": "Have Questions?",
+    "description": "If you have any questions about our shipping or refund policies, please contact us."
+  },
+  "footer": {
+    "lastUpdated": "Last Updated",
+    "date": "March 3, 2026",
+    "disclaimer": "ARVIX PTE. LTD. reserves the right of final interpretation"
+  }
+}
