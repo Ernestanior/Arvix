@@ -19,6 +19,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
   const pricing = (await import(`@/locales/${locale}/pricing.json`)).default;
   const contact = (await import(`@/locales/${locale}/contact.json`)).default;
   const portfolio = (await import(`@/locales/${locale}/portfolio.json`)).default;
+  const refund = (await import(`@/locales/${locale}/refund.json`)).default;
 
   return {
     locale,
@@ -30,6 +31,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
       pricing,
       contact,
       portfolio,
+      refund,
     }
   };
 });
