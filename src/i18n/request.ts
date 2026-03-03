@@ -23,6 +23,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
   const privacy = (await import(`@/locales/${locale}/privacy.json`)).default;
   const terms = (await import(`@/locales/${locale}/terms.json`)).default;
   const agreement = (await import(`@/locales/${locale}/agreement.json`)).default;
+  const cookies = (await import(`@/locales/${locale}/cookies.json`)).default;
 
   return {
     locale,
@@ -38,6 +39,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
       privacy,
       terms,
       agreement,
+      cookies,
     }
   };
 });

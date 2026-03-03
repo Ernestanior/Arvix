@@ -1,0 +1,67 @@
+{
+  "title": "Cookie 政策",
+  "subtitle": "了解我們如何使用 Cookie 和類似技術",
+  "intro": {
+    "title": "Cookie 政策說明",
+    "content": "本 Cookie 政策旨在幫助您了解 ARVIX PTE. LTD.（以下簡稱\"我們\"、\"ARVIX\"）如何在網站（https://xyvnai.com）上使用 Cookie 和類似技術。通過使用我們的網站，您同意按照本政策所述使用 Cookie。"
+  },
+  "what": {
+    "title": "什麼是 Cookie",
+    "content": "Cookie 是當您訪問網站時，存儲在您設備（計算機、手機或平板電腦）上的小型文本文件。它們被廣泛用於使網站正常運行或更高效地運行，同時為網站所有者提供信息。Cookie 通常包含創建它的網站名稱、Cookie 的有效期以及隨機生成的唯一編號。",
+    "types": [
+      "會話 Cookie：這些 Cookie 僅在您的瀏覽器會話期間臨時存儲，當您關閉瀏覽器時會被刪除",
+      "持久性 Cookie：這些 Cookie 會在您的設備上保留一段時間，直到它們過期或被手動刪除",
+      "第一方 Cookie：由您直接訪問的網站設置",
+      "第三方 Cookie：由您訪問的網站以外的其他網站設置"
+    ]
+  },
+  "how": {
+    "title": "我們如何使用 Cookie",
+    "content": "我們在網站上使用 Cookie 的多種目的，包括：",
+    "types": [
+      "必要 Cookie：這些 Cookie 是網站正常運行所必需的，無法在我們的系統中關閉。它們通常只在您執行請求的操作（如設置隱私偏好、登錄或填寫表單）時設置",
+      "性能 Cookie：這些 Cookie 允許我們統計訪問量和流量來源，以便我們衡量和改進網站的性能。它們幫助我們了解哪些頁面最受歡迎和最不受歡迎，以及訪問者如何在網站上導航",
+      "功能 Cookie：這些 Cookie 使網站能夠提供增強的功能和個性化。它們可能由我們或第三方提供商設置，其服務我們已添加到我們的頁面",
+      "定向 Cookie：這些 Cookie 可能由我們的廣告合作夥伴通過我們的網站設置。這些公司可能使用它們來建立您的興趣檔案，並在其他網站上向您展示相關廣告"
+    ]
+  },
+  "specific": {
+    "title": "我們使用的特定 Cookie",
+    "content": "以下是我們網站上使用的主要 Cookie 列表：",
+    "cookies": [
+      "語言偏好 Cookie：記住您的語言選擇，提供本地化的內容體驗",
+      "會話管理 Cookie：維護您的登錄狀態和會話信息",
+      "分析 Cookie（如 Google Analytics）：幫助我們了解用戶如何與網站互動，用於改進網站體驗",
+      "安全 Cookie：幫助保護您的賬戶和交易安全",
+      "性能監控 Cookie：用於監控網站性能和可用性"
+    ]
+  },
+  "control": {
+    "title": "如何控制 Cookie",
+    "content": "大多數網絡瀏覽器允許通過瀏覽器設置控制 Cookie。要了解有關 Cookie 的更多信息，包括如何查看已設置的 Cookie，請訪問 www.allaboutcookies.org。您可以設置瀏覽器不接受 Cookie，但這樣做可能會導致網站某些功能無法正常工作。要刪除 Cookie 或指示您的瀏覽器刪除或拒絕 Cookie，請訪問您瀏覽器的幫助頁面。",
+    "browsers": [
+      "Chrome：設置 > 隱私和安全 > Cookie 和其他網站數據",
+      "Firefox：設置 > 隱私與安全 > Cookie 和網站數據",
+      "Safari：偏好設置 > 隱私 > Cookie 和網站數據",
+      "Edge：設置 > Cookie 和網站權限 > 管理和刪除 Cookie"
+    ]
+  },
+  "thirdParty": {
+    "title": "第三方 Cookie",
+    "content": "我們可能與第三方服務提供商合作，他們可能在您的設備上設置 Cookie。這些第三方 Cookie 受相應第三方提供商的隱私政策約束。我們不會將 Cookie 中收集的個人信息出售給第三方。"
+  },
+  "changes": {
+    "title": "政策變更",
+    "content": "我們可能會不時更新本 Cookie 政策。任何變更將在本頁面上發布，如果變更是重大的，我們將提供更明顯的通知（包括在某些服務中通過電子郵件通知）。"
+  },
+  "contact": {
+    "title": "聯繫我們",
+    "content": "如果您對本 Cookie 政策有任何疑問，請通過以下方式聯繫我們：",
+    "company": "ARVIX PTE. LTD.",
+    "address": "1 Jln Membina, Singapore 169479",
+    "email": "ern@xyvnai.com",
+    "phone": "+65 9156 1413"
+  },
+  "lastUpdated": "最後更新時間",
+  "date": "2024年3月3日"
+}

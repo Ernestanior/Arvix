@@ -58,7 +58,7 @@ export default function FooterEnhanced() {
       { label: t('footer.termsOfUse'), href: '/terms-of-service' },
       { label: t('footer.refundPolicy'), href: '/refund-policy' },
       { label: t('footer.serviceAgreement'), href: '/service-agreement' },
-      { label: t('footer.cookiePolicy'), href: '/cookies' },
+      { label: t('footer.cookiePolicy'), href: '/cookie-policy' },
     ],
   };
 
