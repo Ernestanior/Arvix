@@ -115,6 +115,16 @@ export default function Home() {
         </div>
       </section>
 
+      <FeaturesGrid />
+      <ServicesSection />
+      <StatsSection />
+      <ProcessSection />
+      <PortfolioSectionEnhanced />
+      <TechStackSectionEnhanced />
+      <PricingSection />
+      <FAQSection />
+      <ContactSection />
+      <CTASection />
     </>
   );
 }
