@@ -20,6 +20,9 @@ export default getRequestConfig(async ({ requestLocale }) => {
   const contact = (await import(`@/locales/${locale}/contact.json`)).default;
   const portfolio = (await import(`@/locales/${locale}/portfolio.json`)).default;
   const refund = (await import(`@/locales/${locale}/refund.json`)).default;
+  const privacy = (await import(`@/locales/${locale}/privacy.json`)).default;
+  const terms = (await import(`@/locales/${locale}/terms.json`)).default;
+  const agreement = (await import(`@/locales/${locale}/agreement.json`)).default;
 
   return {
     locale,
@@ -32,6 +35,9 @@ export default getRequestConfig(async ({ requestLocale }) => {
       contact,
       portfolio,
       refund,
+      privacy,
+      terms,
+      agreement,
     }
   };
 });

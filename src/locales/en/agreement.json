@@ -1,0 +1,148 @@
+{
+  "title": "Service Agreement",
+  "subtitle": "Service Agreement",
+  "lastUpdated": "Last Updated",
+  "date": "March 3, 2026",
+  "sections": {
+    "parties": {
+      "title": "1. Parties to the Agreement",
+      "content": "This Service Agreement (\"Agreement\") is entered into by the following parties:",
+      "provider": {
+        "label": "Service Provider",
+        "name": "ARVIX PTE. LTD.",
+        "address": "1 Jln Membina, Singapore 169479",
+        "contact": "ern@xyvnai.com / +65 9156 1413"
+      },
+      "client": {
+        "label": "Client",
+        "description": "The individual or entity receiving services (\"Client\" or \"You\")"
+      }
+    },
+    "scope": {
+      "title": "2. Scope of Services",
+      "content": "Under this Agreement, the Service Provider agrees to provide the following digital services to the Client (specific scope detailed in the Project Confirmation or Statement of Work):",
+      "items": [
+        "Web Development Services: Including frontend development, backend development, database design, API development",
+        "Mobile App Development Services: Including iOS apps, Android apps, cross-platform app development",
+        "Mini Program Development Services: Including WeChat mini programs and other platform mini programs",
+        "SaaS Subscription Services: Providing cloud-based Software as a Service subscriptions",
+        "Technical Consulting Services: Providing technical architecture design, code review, technology selection consulting"
+      ]
+    },
+    "deliverables": {
+      "title": "3. Deliverables",
+      "content": "The Service Provider will deliver outcomes as follows:",
+      "items": [
+        "Web Development Projects: Source code, database architecture, deployment documentation, user manual",
+        "Mobile App Projects: Application packages, source code, app store publishing assistance",
+        "SaaS Services: Online platform access, API documentation, technical support",
+        "Consulting Projects: Consulting reports, technical recommendation documents, architecture diagrams"
+      ]
+    },
+    "timeline": {
+      "title": "4. Project Timeline",
+      "content": "The project timeline will be specified in the Project Confirmation, including:",
+      "items": [
+        "Project start date and estimated completion date",
+        "Phase milestones and delivery timepoints",
+        "Client review and feedback time windows",
+        "Possible extension conditions and procedures"
+      ]
+    },
+    "payment": {
+      "title": "5. Payment Terms",
+      "content": "Payment-related terms:",
+      "items": [
+        "Deposit payment before project start (typically 30-50% of total project amount)",
+        "Milestone payments: Paid in stages according to project progress",
+        "Final payment: Remaining balance paid after project acceptance",
+        "Payment methods: Bank transfer, credit card, or other agreed payment methods",
+        "Late payment will incur late fees, and the Service Provider may suspend services"
+      ]
+    },
+    "revisions": {
+      "title": "6. Revisions and Changes",
+      "content": "Regarding project revisions and changes:",
+      "items": [
+        "Number of free revisions included in the quote (typically 2-3 rounds)",
+        "Additional charges for revisions beyond the free allowance",
+        "Definition of major changes and re-quoting procedures",
+        "Change requests must be submitted in writing",
+        "Agreed changes will affect project timeline and costs"
+      ]
+    },
+    "acceptance": {
+      "title": "7. Acceptance Criteria",
+      "content": "Project acceptance terms:",
+      "items": [
+        "Client has an agreed review period after receiving deliverables (typically 5-10 business days)",
+        "Acceptance criteria based on functional specifications defined in the Project Confirmation",
+        "Any defects must be submitted in writing by the Client during the review period",
+        "After acceptance, the project is deemed complete and enters the warranty period",
+        "Failure to raise objections during the review period is deemed acceptance"
+      ]
+    },
+    "warranty": {
+      "title": "8. Warranty Terms",
+      "content": "The Service Provider provides the following quality guarantees:",
+      "items": [
+        "Free defect repair period of 30-90 days after project completion",
+        "Defects caused by the Service Provider will be repaired during the warranty period",
+        "Warranty does not cover issues caused by client change requests, third-party service changes, or misuse",
+        "SaaS services provide availability guarantees according to agreed Service Level Agreements (SLA)"
+      ]
+    },
+    "ownership": {
+      "title": "9. Intellectual Property Ownership",
+      "content": "Regarding intellectual property arrangements:",
+      "items": [
+        "Source code IP for custom development projects transfers to Client upon full payment",
+        "Service Provider retains rights to use general technical solutions after removing client-specific information",
+        "SaaS platform architecture and core code remain property of the Service Provider",
+        "Client retains IP in content and brand materials they provide",
+        "Both parties are obligated to maintain confidentiality of each other's trade secrets"
+      ]
+    },
+    "confidentiality": {
+      "title": "10. Confidentiality",
+      "content": "Both parties agree to:",
+      "items": [
+        "Maintain confidentiality of each other's trade secrets and information obtained during cooperation",
+        "Not disclose agreement content and project details to third parties",
+        "Use each other's information only to the extent necessary to perform this Agreement",
+        "Confidentiality obligations continue after termination of the Agreement",
+        "Breach of confidentiality obligations will result in corresponding legal liability"
+      ]
+    },
+    "termination": {
+      "title": "11. Agreement Termination",
+      "content": "Conditions for termination:",
+      "items": [
+        "Both parties may terminate by mutual agreement",
+        "Either party may terminate if the other party materially breaches the Agreement",
+        "Client may terminate at any time but must pay for completed work",
+        "Service Provider may terminate if Client is overdue by more than 30 days",
+        "After termination, both parties shall return or destroy each other's confidential information"
+      ]
+    },
+    "dispute": {
+      "title": "12. Dispute Resolution",
+      "content": "Dispute resolution methods:",
+      "items": [
+        "Both parties shall first attempt to resolve disputes through friendly negotiation",
+        "If negotiation fails, mediation or arbitration may be chosen",
+        "Arbitration shall be conducted at the Singapore International Arbitration Centre (SIAC)",
+        "This Agreement is governed by Singapore law",
+        "The losing party shall bear reasonable legal fees"
+      ]
+    },
+    "contact": {
+      "title": "13. Contact Information",
+      "content": "For any questions or concerns, please contact:",
+      "company": "ARVIX PTE. LTD.",
+      "address": "1 Jln Membina, Singapore 169479",
+      "email": "ern@xyvnai.com",
+      "phone": "+65 9156 1413"
+    }
+  }
+}

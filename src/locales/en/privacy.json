@@ -1,0 +1,97 @@
+{
+  "title": "Privacy Policy",
+  "subtitle": "Privacy Policy",
+  "lastUpdated": "Last Updated",
+  "date": "March 3, 2026",
+  "intro": {
+    "title": "Introduction",
+    "content": "ARVIX PTE. LTD. (\"we,\" \"company,\" or \"ARVIX\") takes your privacy very seriously. This Privacy Policy is designed to inform you about how we collect, use, store, and protect your personal information. By using our services, you agree to the terms of this Privacy Policy."
+  },
+  "sections": {
+    "infoCollect": {
+      "title": "1. Information Collection",
+      "content": "We may collect the following types of information:",
+      "items": [
+        "Contact Information: Name, email address, phone number, company name",
+        "Account Information: Username, password, account preferences",
+        "Payment Information: Billing address, payment card details (processed via secure third-party payment processors)",
+        "Usage Data: IP address, browser type, access time, pages visited",
+        "Project Information: Business and technical requirements related to your development needs"
+      ]
+    },
+    "infoUse": {
+      "title": "2. Information Use",
+      "content": "We use the collected information to:",
+      "items": [
+        "Provide, maintain, and improve our services",
+        "Process your orders and payments",
+        "Communicate with you about project progress, technical support, and customer service",
+        "Send service notifications, updates, and marketing communications (you may opt-out)",
+        "Analyze service usage to optimize user experience",
+        "Comply with legal requirements and protect our legitimate interests"
+      ]
+    },
+    "infoShare": {
+      "title": "3. Information Sharing",
+      "content": "We do not sell your personal information. We may share information only in the following circumstances:",
+      "items": [
+        "Service Providers: Share necessary information with trusted third parties who help us operate our business (e.g., payment processors, cloud service providers)",
+        "Legal Requirements: Disclose information when required by law, court order, or government request",
+        "Business Transfers: Information may be part of transferred assets during company merger, acquisition, or asset sale",
+        "Protection of Rights: When necessary to protect the rights, property, or safety of the company, users, or public"
+      ]
+    },
+    "dataSecurity": {
+      "title": "4. Data Security",
+      "content": "We implement appropriate technical and organizational measures to protect your personal information:",
+      "items": [
+        "Use SSL/TLS encryption technology to protect data transmission",
+        "Implement access controls and authentication mechanisms",
+        "Conduct regular security audits and vulnerability assessments",
+        "Provide data protection training to employees",
+        "Sign data processing agreements with third-party service providers"
+      ]
+    },
+    "dataRetention": {
+      "title": "5. Data Retention",
+      "content": "We retain your personal information only for as long as necessary to fulfill the purposes for which it was collected, unless a longer retention period is required or permitted by law. After project completion, we will delete or anonymize your information upon your request or according to our data retention policy."
+    },
+    "yourRights": {
+      "title": "6. Your Rights",
+      "content": "Depending on applicable data protection laws, you may have the following rights:",
+      "items": [
+        "Right to Access: Request access to personal information we hold about you",
+        "Right to Rectification: Request correction of inaccurate or incomplete information",
+        "Right to Erasure: Request deletion of your personal information in certain circumstances",
+        "Right to Restrict Processing: Request restriction of our processing of your information",
+        "Right to Data Portability: Obtain your data in a structured, commonly used format",
+        "Right to Object: Object to our processing based on legitimate interests",
+        "Right to Withdraw Consent: Withdraw consent you have previously given at any time"
+      ]
+    },
+    "cookies": {
+      "title": "7. Cookies and Tracking Technologies",
+      "content": "We use cookies and similar technologies to enhance your browsing experience, analyze website traffic, and personalize content. You can manage cookie preferences through your browser settings, but disabling cookies may affect the use of certain features."
+    },
+    "thirdParty": {
+      "title": "8. Third-Party Links",
+      "content": "Our website may contain links to third-party websites. We are not responsible for the privacy practices of these websites and recommend that you review their privacy policies."
+    },
+    "children": {
+      "title": "9. Children's Privacy",
+      "content": "Our services are not intended for children under 16 years of age. We do not knowingly collect personal information from minors. If we discover that we have inadvertently collected information from a minor, we will delete it immediately."
+    },
+    "changes": {
+      "title": "10. Policy Changes",
+      "content": "We may update this Privacy Policy from time to time. Significant changes will be notified through website announcements or email. We recommend that you review this page regularly for the latest information."
+    },
+    "contact": {
+      "title": "11. Contact Us",
+      "content": "If you have any questions, concerns about this Privacy Policy, or wish to exercise your rights, please contact us:",
+      "company": "ARVIX PTE. LTD.",
+      "address": "1 Jln Membina, Singapore 169479",
+      "email": "ern@xyvnai.com",
+      "phone": "+65 9156 1413"
+    }
+  }
+}

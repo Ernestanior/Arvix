@@ -94,32 +94,10 @@ export default function FooterEnhanced() {
                 {t('footer.companyDescription')}
               </p>
 
-              {/* 公司注册信息 */}
-              <div className="mt-8 pt-6 border-t border-white/10">
-                <h4 className="text-sm font-semibold text-white mb-3">{t('footer.companyInfo')}</h4>
-                <div className="space-y-2 text-sm text-gray-400">
-                  <p className="font-medium text-white">ARVIX PTE. LTD.</p>
-                  <p className="flex items-start gap-2">
-                    <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0 text-amber-400" />
-                    <span>1 Jln Membina, Singapore 169479</span>
-                  </p>
-                  <p className="flex items-center gap-2">
-                    <Phone className="w-4 h-4 flex-shrink-0 text-amber-400" />
-                    <a href="tel:+6591561413" className="hover:text-white transition-colors">
-                      +65 9156 1413
-                    </a>
-                  </p>
-                  <p className="flex items-center gap-2">
-                    <Mail className="w-4 h-4 flex-shrink-0 text-amber-400" />
-                    <a href="mailto:ern@xyvnai.com" className="hover:text-white transition-colors">
-                      ern@xyvnai.com
-                    </a>
-                  </p>
-                </div>
-              </div>
+
 
               {/* 邮件订阅 */}
-              <div className="mb-6">
+              {/* <div className="mb-6">
                 <h4 className="text-sm font-semibold text-white mb-3">{t('footer.subscribeNewsletter')}</h4>
                 <form onSubmit={handleSubscribe} className="relative">
                   <input
@@ -146,7 +124,7 @@ export default function FooterEnhanced() {
                     ✓ {t('footer.subscribeSuccess')}
                   </motion.p>
                 )}
-              </div>
+              </div> */}
 
               {/* 社交媒体 */}
               <div>
@@ -256,7 +234,7 @@ export default function FooterEnhanced() {
                   </li>
                   <li className="flex items-start gap-3 text-gray-400">
                     <MapPin className="w-4 h-4 mt-1 flex-shrink-0 text-amber-400" />
-                    <span>Singapore</span>
+                    <span>1 Jln Membina, Singapore 169479</span>
                   </li>
                 </ul>
               </div>
