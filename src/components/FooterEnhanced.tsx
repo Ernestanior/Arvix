@@ -54,10 +54,10 @@ export default function FooterEnhanced() {
       { label: t('footer.apiDocs'), href: '/api-docs' },
     ],
     legal: [
-      { label: t('footer.privacyPolicy'), href: '/privacy' },
-      { label: t('footer.termsOfUse'), href: '/terms' },
+      { label: t('footer.privacyPolicy'), href: '/privacy-policy' },
+      { label: t('footer.termsOfUse'), href: '/terms-of-service' },
       { label: t('footer.refundPolicy'), href: '/refund-policy' },
-      { label: t('footer.serviceAgreement'), href: '/agreement' },
+      { label: t('footer.serviceAgreement'), href: '/service-agreement' },
       { label: t('footer.cookiePolicy'), href: '/cookies' },
     ],
   };
