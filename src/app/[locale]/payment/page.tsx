@@ -17,12 +17,17 @@ export default function CheckoutPage() {
   const [paymentIntentId, setPaymentIntentId] = useState<string>('');
   const [errorMessage, setErrorMessage] = useState<string>('');
 
-  // 从 URL 参数获取套餐信息
+  // 从 URL 参数获取套餐信息（TWD 价格）
   const packageName = searchParams.get('package') || 'Development Service';
-  const totalPrice = parseFloat(searchParams.get('price') || '960'); // 总价（月费+初装费）
-  const monthlyFee = parseFloat(searchParams.get('monthly') || '36');
-  const setupFee = parseFloat(searchParams.get('setupFee') || '260');
-  const displayCurrency = searchParams.get('currency') || 'USD';
+  const monthlyTWD = parseFloat(searchParams.get('monthlyTWD') || '1299');
+  const setupFeeTWD = parseFloat(searchParams.get('setupFeeTWD') || '8000');
+  
+  // 统一转换为 USD（TWD to USD 汇率约 0.032）
+  const TWD_TO_USD = 0.032;
+  const monthlyFee = Math.round(monthlyTWD * TWD_TO_USD * 100) / 100;
+  const setupFee = Math.round(setupFeeTWD * TWD_TO_USD * 100) / 100;
+  const totalPrice = Math.round((monthlyTWD + setupFeeTWD) * TWD_TO_USD * 100) / 100;
+  const displayCurrency = 'USD';
 
   // 订单数据 - 统一用美元显示
   const order = {

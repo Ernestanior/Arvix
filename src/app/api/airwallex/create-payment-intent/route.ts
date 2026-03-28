@@ -72,8 +72,16 @@ async function createPaymentIntent(
   token: string,
   params: PaymentIntentRequest
 ): Promise<PaymentIntentResponse> {
-  // 转换金额单位为最小货币单位（如 TWD 的分）
-  const amountInMinorUnit = Math.round(params.amount * 100);
+  // Airwallex API 接受的金额格式：
+  // - 对于大多数币种（USD, EUR等）：使用小数表示，如 100.50
+  // - 对于零小数位币种（TWD, JPY等）：使用整数表示，如 1000
+  const amount = Math.round(params.amount * 100) / 100; // 保留两位小数
+
+  console.log('Creating payment intent:', {
+    originalAmount: params.amount,
+    currency: params.currency.toUpperCase(),
+    finalAmount: amount,
+  });
 
   const response = await fetch(`${AIRWALLEX_BASE_URL}/api/v1/pa/payment_intents/create`, {
     method: 'POST',
@@ -83,7 +91,7 @@ async function createPaymentIntent(
     },
     body: JSON.stringify({
       // 必需参数
-      amount: amountInMinorUnit,
+      amount: amount,
       currency: params.currency.toUpperCase(),
       
       // 商户订单信息
@@ -174,13 +182,18 @@ export async function POST(request: NextRequest) {
     // 创建 Payment Intent
     const paymentIntent = await createPaymentIntent(token, body);
 
+    console.log('Payment Intent created:', {
+      id: paymentIntent.id,
+      amount: paymentIntent.amount,
+      currency: paymentIntent.currency,
+    });
+
     // 返回 client_secret 给前端
     return NextResponse.json({
       success: true,
       clientSecret: paymentIntent.client_secret,
       paymentIntentId: paymentIntent.id,
-      amount: body.amount,
-      currency: body.currency.toUpperCase(),
+      currency: paymentIntent.currency,
       status: paymentIntent.status,
     });
 

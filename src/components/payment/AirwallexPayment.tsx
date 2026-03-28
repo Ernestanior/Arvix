@@ -67,6 +67,12 @@ export default function AirwallexPayment({
 
   const createPaymentIntent = useCallback(async (): Promise<PaymentIntentResponse | null> => {
     try {
+      console.log('Creating payment intent with:', {
+        amount,
+        currency,
+        description,
+      });
+      
       const response = await fetch('/api/airwallex/create-payment-intent', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -86,7 +92,9 @@ export default function AirwallexPayment({
         throw new Error(errorData.message || 'Failed to create payment intent');
       }
 
-      return await response.json();
+      const result = await response.json();
+      console.log('Payment intent created:', result);
+      return result;
     } catch (err) {
       const errorMessage = err instanceof Error ? err.message : 'Unknown error';
       setError(errorMessage);
@@ -268,7 +276,11 @@ function AirwallexDropInForm({
 
   return (
     <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-6">
-      <div id="airwallex-dropin-container" className="min-h-[400px]" />
+      <div 
+        id="airwallex-dropin-container" 
+        className="min-h-[400px] w-full"
+        style={{ minHeight: '400px' }}
+      />
       
       <button
         onClick={onCancel}
