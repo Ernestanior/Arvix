@@ -19,10 +19,10 @@ export default function CheckoutPage() {
 
   // 从 URL 参数获取套餐信息
   const packageName = searchParams.get('package') || 'Development Service';
-  const totalPrice = 0.02; // 临时测试价格：0.01 + 0.01
-  const monthlyFee = 0.01; // 临时测试价格
-  const setupFee = 0.01; // 临时测试价格
-  const displayCurrency = 'USD';
+  const totalPrice = parseFloat(searchParams.get('price') || '960'); // 总价（月费+初装费）
+  const monthlyFee = parseFloat(searchParams.get('monthly') || '36');
+  const setupFee = parseFloat(searchParams.get('setupFee') || '260');
+  const displayCurrency = searchParams.get('currency') || 'USD';
 
   // 订单数据 - 统一用美元显示
   const order = {
