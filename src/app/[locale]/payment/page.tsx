@@ -1,6 +1,7 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 import AirwallexPayment from '@/components/payment/AirwallexPayment';
 import { CreditCard, CheckCircle, AlertCircle, Shield, Lock, Sparkles } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -11,21 +12,29 @@ import { motion, AnimatePresence } from 'framer-motion';
  * 展示如何在实际业务中使用 Airwallex 支付组件
  */
 export default function CheckoutPage() {
+  const searchParams = useSearchParams();
   const [paymentStatus, setPaymentStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [paymentIntentId, setPaymentIntentId] = useState<string>('');
   const [errorMessage, setErrorMessage] = useState<string>('');
 
-  // 示例订单数据
+  // 从 URL 参数获取套餐信息
+  const packageName = searchParams.get('package') || 'Development Service';
+  const totalPrice = parseFloat(searchParams.get('price') || '960'); // 总价（月费+初装费）
+  const monthlyFee = parseFloat(searchParams.get('monthly') || '36');
+  const setupFee = parseFloat(searchParams.get('setupFee') || '260');
+  const displayCurrency = searchParams.get('currency') || 'USD';
+
+  // 订单数据 - 统一用美元显示
   const order = {
-    id: 'order_12345',
+    id: `order_${Date.now()}`,
     items: [
-      { name: 'SaaS 订阅服务 - 月度', price: 100, icon: '📦' },
-      { name: '定制开发服务', price: 500, icon: '💻' },
+      { name: `${packageName} - 月费`, price: monthlyFee, icon: '📅' },
+      { name: '初装费', price: setupFee, icon: '⚙️' },
     ],
-    total: 600,
-    currency: 'TWD',
+    total: totalPrice,
+    currency: 'USD', // 统一使用美元
     customerEmail: 'customer@example.com',
-    customerName: 'John Doe',
+    customerName: 'Customer',
   };
 
   /**
@@ -68,6 +77,25 @@ export default function CheckoutPage() {
       />
 
       <div className="max-w-5xl mx-auto px-6 py-16 relative z-10">
+        {/* 公司法人信息 - 顶部显示 */}
+        <motion.div 
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
+          className="bg-white/5 border border-white/10 rounded-2xl p-6 mb-8"
+        >
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-center md:text-left">
+            <div>
+              <p className="text-sm text-amber-400 mb-1">Legal Entity / 法人实体</p>
+              <p className="text-white font-bold text-lg">ARVIX PTE. LTD.</p>
+            </div>
+            <div>
+              <p className="text-sm text-amber-400 mb-1">Registered Address / 注册地址</p>
+              <p className="text-white font-medium">1 Jln Membina, Singapore 169479</p>
+            </div>
+          </div>
+        </motion.div>
+
         {/* 页面标题 */}
         <motion.div 
           initial={{ opacity: 0, y: -20 }}
@@ -117,7 +145,7 @@ export default function CheckoutPage() {
                         <span className="text-gray-200 font-medium block">{item.name}</span>
                       </div>
                       <span className="text-white font-bold">
-                        {order.currency} {item.price.toFixed(2)}
+                        USD ${item.price.toFixed(2)}
                       </span>
                     </motion.div>
                   ))}
@@ -131,7 +159,7 @@ export default function CheckoutPage() {
                   <span className="text-lg font-semibold text-white">总计金额</span>
                   <div className="text-right">
                     <span className="text-3xl font-bold bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent">
-                      {order.currency} {order.total.toFixed(2)}
+                      USD ${order.total.toFixed(2)}
                     </span>
                     <span className="text-sm text-gray-500 block mt-1">含税价</span>
                   </div>
@@ -149,16 +177,6 @@ export default function CheckoutPage() {
                         {method}
                       </span>
                     ))}
-                    {order.currency === 'TWD' && (
-                      <>
-                        <span className="px-3 py-1.5 bg-green-500/10 border border-green-500/20 rounded-full text-xs text-green-400">
-                          玉山银行
-                        </span>
-                        <span className="px-3 py-1.5 bg-green-500/10 border border-green-500/20 rounded-full text-xs text-green-400">
-                          7-Eleven
-                        </span>
-                      </>
-                    )}
                   </div>
                 </div>
               </div>

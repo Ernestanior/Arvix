@@ -244,6 +244,20 @@ export default function FooterEnhanced() {
           {/* 分隔线 */}
           <div className="border-t border-white/10 mb-8" />
 
+          {/* 公司法人信息 - 突出显示 */}
+          <div className="bg-white/5 border border-white/10 rounded-2xl p-6 mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <h4 className="text-sm font-semibold text-amber-400 mb-2">Legal Entity / 法人实体</h4>
+                <p className="text-white font-bold text-lg">ARVIX PTE. LTD.</p>
+              </div>
+              <div>
+                <h4 className="text-sm font-semibold text-amber-400 mb-2">Registered Address / 注册地址</h4>
+                <p className="text-white font-medium">1 Jln Membina, Singapore 169479</p>
+              </div>
+            </div>
+          </div>
+
           {/* 底部信息 */}
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex items-center gap-2 text-gray-400 text-sm">

@@ -748,7 +748,7 @@ export default function PricingPage() {
                   </ul>
 
                   {/* CTA Button */}
-                  <Link href="payment">
+                  <Link href={`/payment?package=${encodeURIComponent(t(`packages.${pkg.id}.name`))}&price=${Math.round(pkg.price * selectedCurrency.rate)}&currency=${selectedCurrency.code}&basePriceTWD=${pkg.price}`}>
                     <button
                       className={`w-full py-3 rounded-xl font-medium transition-all ${
                         pkg.popular
