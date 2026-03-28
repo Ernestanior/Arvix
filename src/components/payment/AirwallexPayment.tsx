@@ -46,8 +46,9 @@ export default function AirwallexPayment({
   useEffect(() => {
     const initAirwallex = () => {
       try {
+        // @ts-ignore - Airwallex SDK 类型定义不完整
         Airwallex.loadAirwallex({
-          env: airwallexEnv as 'demo' | 'prod',
+          env: airwallexEnv,
         });
         console.log('Airwallex SDK loaded');
         setIsReady(true);
