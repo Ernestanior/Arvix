@@ -1,12 +1,8 @@
 'use client';
 
 import React, { useState, useEffect, useCallback } from 'react';
-import { loadAirwallex, createElements } from 'airwallex-payment-elements';
+import Airwallex from 'airwallex-payment-elements';
 import { CreditCard, Smartphone, Wallet, Loader2 } from 'lucide-react';
-
-// =============================================================================
-// 类型定义
-// =============================================================================
 
 interface AirwallexPaymentProps {
   amount: number;
@@ -27,10 +23,6 @@ interface PaymentIntentResponse {
   currency: string;
 }
 
-// =============================================================================
-// Airwallex 支付组件
-// =============================================================================
-
 export default function AirwallexPayment({
   amount,
   currency,
@@ -49,14 +41,13 @@ export default function AirwallexPayment({
   const [error, setError] = useState<string>('');
   const [showPaymentForm, setShowPaymentForm] = useState(false);
 
-  const airwallexEnv = (process.env.NEXT_PUBLIC_AIRWALLEX_ENV as 'demo' | 'prod') || 'demo';
+  const airwallexEnv = process.env.NEXT_PUBLIC_AIRWALLEX_ENV === 'prod' ? 'prod' : 'demo';
 
   useEffect(() => {
-    const initAirwallex = async () => {
+    const initAirwallex = () => {
       try {
-        await loadAirwallex({
-          env: airwallexEnv,
-          origin: typeof window !== 'undefined' ? window.location.origin : '',
+        Airwallex.loadAirwallex({
+          env: airwallexEnv as 'demo' | 'prod',
         });
         console.log('Airwallex SDK loaded');
         setIsReady(true);
@@ -66,7 +57,9 @@ export default function AirwallexPayment({
       }
     };
 
-    initAirwallex();
+    if (typeof window !== 'undefined') {
+      initAirwallex();
+    }
   }, [airwallexEnv]);
 
   const createPaymentIntent = useCallback(async (): Promise<PaymentIntentResponse | null> => {
@@ -194,10 +187,6 @@ export default function AirwallexPayment({
   );
 }
 
-// =============================================================================
-// Drop-in 表单组件
-// =============================================================================
-
 interface AirwallexDropInFormProps {
   clientSecret: string;
   paymentIntentId: string;
@@ -220,51 +209,29 @@ function AirwallexDropInForm({
   useEffect(() => {
     let dropInElement: any = null;
 
-    const initDropIn = async () => {
+    const initDropIn = () => {
       try {
-        const elements = createElements({
-          mode: env,
-        });
-
-        dropInElement = elements.create('dropIn', {
-          intent_id: paymentIntentId,
-          client_secret: clientSecret,
-          currency: currency.toUpperCase(),
-          
-          appearance: {
-            mode: 'dark',
-            variables: {
-              colorBrand: '#f59e0b',
-              colorBackground: '#1f2937',
-              colorText: '#ffffff',
-            },
+        dropInElement = Airwallex.createElement('dropIn', {
+          intent: {
+            id: paymentIntentId,
+            client_secret: clientSecret,
           },
+          currency: currency.toUpperCase(),
         });
 
         dropInElement.mount('airwallex-dropin-container');
 
-        dropInElement.on('ready', () => {
-          console.log('Drop-in ready');
-        });
-
-        dropInElement.on('success', (event: any) => {
-          console.log('Payment success event:', event);
+        // 监听成功事件
+        window.addEventListener('onSuccess', ((event: CustomEvent) => {
+          console.log('Payment success:', event.detail);
           onSuccess(paymentIntentId);
-        });
+        }) as EventListener);
 
-        dropInElement.on('onSuccess', (event: any) => {
-          console.log('Payment onSuccess event:', event);
-          onSuccess(paymentIntentId);
-        });
-
-        dropInElement.on('error', (event: any) => {
-          console.error('Payment error:', event);
-          onError(new Error(event.error?.message || 'Payment failed'));
-        });
-
-        dropInElement.on('cancel', (event: any) => {
-          console.log('Payment cancelled:', event);
-        });
+        // 监听错误事件
+        window.addEventListener('onError', ((event: CustomEvent) => {
+          console.error('Payment error:', event.detail);
+          onError(new Error(event.detail?.message || 'Payment failed'));
+        }) as EventListener);
 
       } catch (err) {
         console.error('Failed to mount Drop-in:', err);
@@ -283,6 +250,9 @@ function AirwallexDropInForm({
           console.error('Error unmounting:', err);
         }
       }
+      // 清理事件监听
+      window.removeEventListener('onSuccess', (() => {}) as EventListener);
+      window.removeEventListener('onError', (() => {}) as EventListener);
     };
   }, [clientSecret, paymentIntentId, currency, onSuccess, onError]);
 
