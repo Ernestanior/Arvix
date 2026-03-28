@@ -212,7 +212,14 @@ function AirwallexDropInForm({
 
     const initDropIn = () => {
       try {
-        dropInElement = Airwallex.createElement('dropIn', {
+        // 使用 createElements 创建 elements 实例
+        const elements = Airwallex.createElements({
+          // @ts-ignore
+          mode: env,
+        });
+
+        // 然后用 elements.create() 创建 dropIn 元素
+        dropInElement = elements.create('dropIn', {
           intent: {
             id: paymentIntentId,
             client_secret: clientSecret,
