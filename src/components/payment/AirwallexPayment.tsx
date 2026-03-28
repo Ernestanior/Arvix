@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useCallback } from 'react';
-import { loadAirwallex, createElement } from 'airwallex-payment-elements';
+import { loadAirwallex, createElements } from 'airwallex-payment-elements';
 import { CreditCard, Smartphone, Wallet, Loader2 } from 'lucide-react';
 
 // =============================================================================
@@ -222,7 +222,11 @@ function AirwallexDropInForm({
 
     const initDropIn = async () => {
       try {
-        dropInElement = createElement('dropIn', {
+        const elements = createElements({
+          mode: env,
+        });
+
+        dropInElement = elements.create('dropIn', {
           intent_id: paymentIntentId,
           client_secret: clientSecret,
           currency: currency.toUpperCase(),
@@ -244,13 +248,22 @@ function AirwallexDropInForm({
         });
 
         dropInElement.on('success', (event: any) => {
-          console.log('Payment success:', event);
+          console.log('Payment success event:', event);
+          onSuccess(paymentIntentId);
+        });
+
+        dropInElement.on('onSuccess', (event: any) => {
+          console.log('Payment onSuccess event:', event);
           onSuccess(paymentIntentId);
         });
 
         dropInElement.on('error', (event: any) => {
           console.error('Payment error:', event);
           onError(new Error(event.error?.message || 'Payment failed'));
+        });
+
+        dropInElement.on('cancel', (event: any) => {
+          console.log('Payment cancelled:', event);
         });
 
       } catch (err) {
