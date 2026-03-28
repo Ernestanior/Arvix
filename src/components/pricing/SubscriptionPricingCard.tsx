@@ -30,6 +30,7 @@ export default function SubscriptionPricingCard({
     : Math.round(pkg.pricing.annual / 12);
   
   const setupFee = pkg.pricing.setupFee;
+  const monthlyFee = monthlyPrice;
   const annualSavings = pkg.pricing.monthly * 12 - pkg.pricing.annual;
 
   return (
@@ -178,7 +179,7 @@ export default function SubscriptionPricingCard({
       </div>
 
       {/* CTA按钮 */}
-      <Link href={`/payment?package=${encodeURIComponent(t(`packages.${pkg.id}.name`))}&price=${Math.round((monthlyPrice + setupFee) * currency.rate * 100) / 100}&currency=${currency.code}&basePriceTWD=${monthlyPrice + setupFee}&monthly=${Math.round(monthlyPrice * currency.rate * 100) / 100}&setupFee=${Math.round(setupFee * currency.rate * 100) / 100}`}>
+      <Link href={`/payment?package=${encodeURIComponent(t(`packages.${pkg.id}.name`))}&price=${monthlyFee + setupFee}&currency=USD&monthly=${monthlyFee}&setupFee=${setupFee}`}>
         <button
           className={`w-full py-3 rounded-xl font-medium transition-all ${
             isPopular || isBestValue

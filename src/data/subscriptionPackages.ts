@@ -9,9 +9,9 @@ export const corporateWebsiteSubscriptions: SubscriptionPackage[] = [
     tier: 'starter',
     description: '适合初创公司和个人品牌',
     pricing: {
-      setupFee: 1,
-      monthly: 1,
-      annual: 10,
+      setupFee: 8000,
+      monthly: 1299,
+      annual: 12990,
       annualDiscount: 17,
     },
     limits: {
@@ -44,9 +44,9 @@ export const corporateWebsiteSubscriptions: SubscriptionPackage[] = [
     tier: 'growth',
     description: '适合成长型企业',
     pricing: {
-      setupFee: 1,
-      monthly: 1,
-      annual: 10,
+      setupFee: 15000,
+      monthly: 2299,
+      annual: 22990,
       annualDiscount: 17,
     },
     limits: {
@@ -81,9 +81,9 @@ export const corporateWebsiteSubscriptions: SubscriptionPackage[] = [
     tier: 'business',
     description: '适合中大型企业',
     pricing: {
-      setupFee: 1,
-      monthly: 1,
-      annual: 10,
+      setupFee: 25000,
+      monthly: 3999,
+      annual: 39990,
       annualDiscount: 17,
     },
     limits: {

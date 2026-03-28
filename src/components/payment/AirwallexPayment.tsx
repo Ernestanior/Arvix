@@ -1,8 +1,8 @@
 'use client';
 
-import React, { useState, useCallback } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { CreditCard, Smartphone, Wallet, Loader2 } from 'lucide-react';
-import Script from 'next/script';
+import { init, createElement } from '@airwallex/components-sdk';
 
 interface AirwallexPaymentProps {
   amount: number;
@@ -21,12 +21,6 @@ interface PaymentIntentResponse {
   paymentIntentId: string;
   amount: number;
   currency: string;
-}
-
-declare global {
-  interface Window {
-    Airwallex: any;
-  }
 }
 
 export default function AirwallexPayment({
@@ -49,12 +43,27 @@ export default function AirwallexPayment({
 
   const airwallexEnv = process.env.NEXT_PUBLIC_AIRWALLEX_ENV === 'prod' ? 'prod' : 'demo';
 
-  const handleScriptLoad = () => {
-    if (window.Airwallex) {
-      console.log('Airwallex object available:', window.Airwallex);
-      setSdkReady(true);
-    }
-  };
+  // 初始化 Airwallex SDK
+  useEffect(() => {
+    const initSDK = async () => {
+      try {
+        console.log('Initializing Airwallex SDK with env:', airwallexEnv);
+        
+        await init({
+          env: airwallexEnv as 'prod' | 'demo',
+          locale: 'zh',
+        });
+        
+        console.log('Airwallex SDK initialized successfully');
+        setSdkReady(true);
+      } catch (err) {
+        console.error('Failed to initialize Airwallex SDK:', err);
+        setError('Failed to initialize payment system');
+      }
+    };
+
+    initSDK();
+  }, [airwallexEnv]);
 
   const createPaymentIntent = useCallback(async (): Promise<PaymentIntentResponse | null> => {
     try {
@@ -104,92 +113,84 @@ export default function AirwallexPayment({
   };
 
   return (
-    <>
-      <Script
-        src="https://checkout.airwallex.com/assets/elements.bundle.min.js"
-        onLoad={handleScriptLoad}
-        strategy="lazyOnload"
-      />
-      
-      <div className="w-full max-w-md mx-auto">
-        <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-6 mb-4">
-          <div className="flex items-center justify-between mb-4">
-            <span className="text-gray-400">Amount</span>
-            <span className="text-2xl font-bold text-white">
-              {currency} {amount.toFixed(2)}
-            </span>
-          </div>
-          
-          {description && (
-            <div className="text-sm text-gray-500 mb-4">{description}</div>
-          )}
+    <div className="w-full max-w-md mx-auto">
+      <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-6 mb-4">
+        <div className="flex items-center justify-between mb-4">
+          <span className="text-gray-400">Amount</span>
+          <span className="text-2xl font-bold text-white">
+            {currency} {amount.toFixed(2)}
+          </span>
+        </div>
+        
+        {description && (
+          <div className="text-sm text-gray-500 mb-4">{description}</div>
+        )}
 
-          <div className="flex items-center gap-3 text-gray-500 text-sm mb-4">
-            <span className="flex items-center gap-1">
-              <CreditCard className="w-4 h-4" />
-              Cards
-            </span>
-            <span className="flex items-center gap-1">
-              <Smartphone className="w-4 h-4" />
-              Apple Pay
-            </span>
-            <span className="flex items-center gap-1">
-              <Wallet className="w-4 h-4" />
-              Google Pay
-            </span>
-          </div>
-
-          {currency === 'TWD' && (
-            <div className="text-xs text-gray-600 bg-gray-800/50 rounded-lg p-2">
-              <span className="font-medium">Taiwan Local:</span> E.SUN Bank, 7-Eleven
-            </div>
-          )}
+        <div className="flex items-center gap-3 text-gray-500 text-sm mb-4">
+          <span className="flex items-center gap-1">
+            <CreditCard className="w-4 h-4" />
+            Cards
+          </span>
+          <span className="flex items-center gap-1">
+            <Smartphone className="w-4 h-4" />
+            Apple Pay
+          </span>
+          <span className="flex items-center gap-1">
+            <Wallet className="w-4 h-4" />
+            Google Pay
+          </span>
         </div>
 
-        {error && (
-          <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-3 mb-4">
-            <p className="text-red-400 text-sm">{error}</p>
+        {currency === 'TWD' && (
+          <div className="text-xs text-gray-600 bg-gray-800/50 rounded-lg p-2">
+            <span className="font-medium">Taiwan Local:</span> E.SUN Bank, 7-Eleven
           </div>
         )}
-
-        {!showPaymentForm ? (
-          <button
-            onClick={handlePaymentClick}
-            disabled={loading || !sdkReady}
-            className="w-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
-          >
-            {loading ? (
-              <>
-                <Loader2 className="w-5 h-5 animate-spin" />
-                Processing...
-              </>
-            ) : !sdkReady ? (
-              <>
-                <Loader2 className="w-5 h-5 animate-spin" />
-                Loading...
-              </>
-            ) : (
-              <>
-                <CreditCard className="w-5 h-5" />
-                Pay {currency} {amount.toFixed(2)}
-              </>
-            )}
-          </button>
-        ) : (
-          <AirwallexDropInForm
-            clientSecret={clientSecret}
-            paymentIntentId={paymentIntentId}
-            currency={currency}
-            onSuccess={onSuccess}
-            onError={(err) => {
-              setError(err.message);
-              onError(err);
-            }}
-            onCancel={() => setShowPaymentForm(false)}
-          />
-        )}
       </div>
-    </>
+
+      {error && (
+        <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-3 mb-4">
+          <p className="text-red-400 text-sm">{error}</p>
+        </div>
+      )}
+
+      {!showPaymentForm ? (
+        <button
+          onClick={handlePaymentClick}
+          disabled={loading || !sdkReady}
+          className="w-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+        >
+          {loading ? (
+            <>
+              <Loader2 className="w-5 h-5 animate-spin" />
+              Processing...
+            </>
+          ) : !sdkReady ? (
+            <>
+              <Loader2 className="w-5 h-5 animate-spin" />
+              Loading...
+            </>
+          ) : (
+            <>
+              <CreditCard className="w-5 h-5" />
+              Pay {currency} {amount.toFixed(2)}
+            </>
+          )}
+        </button>
+      ) : (
+        <AirwallexDropInForm
+          clientSecret={clientSecret}
+          paymentIntentId={paymentIntentId}
+          currency={currency}
+          onSuccess={onSuccess}
+          onError={(err) => {
+            setError(err.message);
+            onError(err);
+          }}
+          onCancel={() => setShowPaymentForm(false)}
+        />
+      )}
+    </div>
   );
 }
 
@@ -210,30 +211,22 @@ function AirwallexDropInForm({
   onError,
   onCancel,
 }: AirwallexDropInFormProps) {
-  React.useEffect(() => {
+  useEffect(() => {
     let dropInElement: any = null;
 
     const initDropIn = async () => {
-      if (!window.Airwallex) {
-        onError(new Error('Airwallex SDK not loaded'));
-        return;
-      }
-
       try {
-        // 初始化 Airwallex SDK
-        await window.Airwallex.loadAirwallex({
-          env: process.env.NEXT_PUBLIC_AIRWALLEX_ENV === 'prod' ? 'prod' : 'demo',
+        console.log('Creating Drop-in element with:', {
+          intent_id: paymentIntentId,
+          currency: currency.toUpperCase(),
         });
 
-        console.log('Airwallex SDK initialized');
-
         // 创建 Drop-in 元素
-        dropInElement = window.Airwallex.createElement('dropIn', {
-          intent: {
-            id: paymentIntentId,
-            client_secret: clientSecret,
-          },
+        dropInElement = await createElement('dropIn', {
+          intent_id: paymentIntentId,
+          client_secret: clientSecret,
           currency: currency.toUpperCase(),
+          mode: 'payment',
         });
 
         // 挂载到 DOM

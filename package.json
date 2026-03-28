@@ -12,6 +12,7 @@
     "deploy:cf": "wrangler pages deploy .next --project-name=xyvn-website"
   },
   "dependencies": {
+    "@airwallex/components-sdk": "^1.28.3",
     "@hookform/resolvers": "^5.2.2",
     "@studio-freight/lenis": "^1.0.33",
     "@supabase/ssr": "^0.8.0",
