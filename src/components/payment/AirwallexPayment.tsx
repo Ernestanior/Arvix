@@ -41,7 +41,7 @@ export default function AirwallexPayment({
   const [error, setError] = useState<string>('');
   const [showPaymentForm, setShowPaymentForm] = useState(false);
 
-  const airwallexEnv = process.env.NEXT_PUBLIC_AIRWALLEX_ENV === 'prod' ? 'prod' : 'demo';
+  const airwallexEnv: any = process.env.NEXT_PUBLIC_AIRWALLEX_ENV === 'prod' ? 'prod' : 'demo';
 
   useEffect(() => {
     const initAirwallex = () => {
