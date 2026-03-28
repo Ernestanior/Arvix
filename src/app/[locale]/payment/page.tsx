@@ -32,7 +32,7 @@ export default function CheckoutPage() {
       { name: '初装费', price: setupFee, icon: '⚙️' },
     ],
     total: totalPrice,
-    currency: 'USD', // 统一使用美元
+    currency: displayCurrency, // 使用 URL 传递的币种
     customerEmail: 'customer@example.com',
     customerName: 'Customer',
   };
@@ -145,7 +145,7 @@ export default function CheckoutPage() {
                         <span className="text-gray-200 font-medium block">{item.name}</span>
                       </div>
                       <span className="text-white font-bold">
-                        USD ${item.price.toFixed(2)}
+                        {displayCurrency} ${item.price.toFixed(2)}
                       </span>
                     </motion.div>
                   ))}
@@ -159,7 +159,7 @@ export default function CheckoutPage() {
                   <span className="text-lg font-semibold text-white">总计金额</span>
                   <div className="text-right">
                     <span className="text-3xl font-bold bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent">
-                      USD ${order.total.toFixed(2)}
+                      {displayCurrency} ${order.total.toFixed(2)}
                     </span>
                     <span className="text-sm text-gray-500 block mt-1">含税价</span>
                   </div>
